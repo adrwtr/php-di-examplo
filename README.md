@@ -23,6 +23,7 @@ php -r "unlink('composer-setup.php');"
 php composer.phar require slim/slim:"4.*"
 php composer.phar require slim/psr7
 
+
 6 - Criar o arquivo public/index.php
 
 <?php
@@ -46,4 +47,55 @@ testando a aplicação base
 
 php -S localhost:8080 -t public public/index.php
 
-6 - 
+
+----
+
+7 - Criando uma rota que retorna um json
+
+no index.php
+
+$app->get('/usuarios', function (Request $request, Response $response, $args) {
+    $data = array(
+        array(
+            'id' => 1,
+            'nome' => "Adriano"
+        ),
+
+        array(
+            'id' => 2,
+            'nome' => "Matheus"
+        )
+    );
+    $payload = json_encode($data);
+
+    $response->getBody()->write($payload);
+
+    return $response
+        ->withHeader(
+            'Content-Type', 
+            'application/json'
+        );
+});
+
+-----
+
+8 - Agora vamos adicionar classes
+
+Adicionar no composer json
+
+"autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+
+php composer.phar dump-autoload
+
+Criar as classes 
+
+src/Action/Action.php
+src/Action/ActionPayload.php
+src/Action/Usuario/UsuarioListarAction.php
+
+
+
