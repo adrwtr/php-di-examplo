@@ -1,4 +1,4 @@
-# php-di-examplo
+# php-di-exemplo
 Exemplo e aplicação simples em PHP com Dependence Injection para testes
 
 # Passo a passo
@@ -7,7 +7,7 @@ Exemplo e aplicação simples em PHP com Dependence Injection para testes
 
 2 - Baixar o projeto na maquina
 
-git clone https://github.com/adrwtr/php-di-examplo.git
+git clone https://github.com/adrwtr/php-di-exemplo.git
 
 3 - Instalando composer no projeto para baixar pacotes de terceiros
 
@@ -18,3 +18,32 @@ php -r "unlink('composer-setup.php');"
 
 4 - adicionando no gitignore o composer
 
+5 - Instalar o SLIM Framework
+
+php composer.phar require slim/slim:"4.*"
+php composer.phar require slim/psr7
+
+6 - Criar o arquivo public/index.php
+
+<?php
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\Factory\AppFactory;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$app = AppFactory::create();
+
+$app->get('/', function (Request $request, Response $response, $args) {
+    $response->getBody()->write("Hello world!");
+    return $response;
+});
+
+$app->run();
+
+
+testando a aplicação base
+
+php -S localhost:8080 -t public public/index.php
+
+6 - 
