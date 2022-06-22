@@ -97,5 +97,14 @@ src/Action/Action.php
 src/Action/ActionPayload.php
 src/Action/Usuario/UsuarioListarAction.php
 
+alterar o index
 
+Ver commit - 87f8e8b - Usando uma classe de Action - MVC
 
+----
+
+9 - Criando a camada de dominio
+
+src\Domain\Model\Usuario.php
+src\Domain\Repository\IUsuarioRepository.php
+src\Domain\Repository\UsuarioRepository.php
