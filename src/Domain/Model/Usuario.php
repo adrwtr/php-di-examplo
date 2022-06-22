@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace App\Domain\Model;
 
-class Usuario
+use JsonSerializable;
+
+class Usuario implements JsonSerializable
 {
     /**
      * @var int|null
@@ -39,5 +41,16 @@ class Usuario
     public function getDsNome(): string
     {
         return $this->ds_nome;
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize()
+    {
+        return [
+            'id' => $this->id,
+            'ds_nome' => $this->ds_nome
+        ];
     }
 }

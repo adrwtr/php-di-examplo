@@ -5,30 +5,19 @@ namespace App\Action\Usuario;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use App\Action\Action;
+use App\Service\UsuarioService;
 
 class UsuarioListarAction extends Action
 {
-
     protected function action(): Response
     {
-        //$users = $this->userRepository->findAll();
+        $objUsuarioService = new UsuarioService();
 
-        //$this->logger->info("Users list was viewed.");
+        $arrUsuarios = $objUsuarioService->listarUsuarios();
 
-        $data = array(
-            array(
-                'id' => 1,
-                'nome' => "Adriano"
-            ),
-    
-            array(
-                'id' => 2,
-                'nome' => "Matheus"
-            )
-        );
         // $payload = json_encode($data);
 
-        return $this->respondWithData($data);
+        return $this->respondWithData($arrUsuarios);
         // return $this->respond($payload);
     }
 }

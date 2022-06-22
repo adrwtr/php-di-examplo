@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Repository;
 
-use App\Domain\Model\User;
+use App\Domain\Model\Usuario;
 
 class UsuarioRepository implements IUsuarioRepository
 {
@@ -15,36 +15,30 @@ class UsuarioRepository implements IUsuarioRepository
     /**
      * constructor.
      *
-     * @param array|null $users
+     * @param array|null $arrUsuarios
      */
     public function __construct(array $arrUsuarios = null)
     {
         $this->arrUsuarios = $arrUsuarios ?? [
-            1 => new User(1, 'Bill Gates'),
-            2 => new User(2, 'Steve Jobs'),
-            3 => new User(3, 'Mark Zuckerberg'),
-            4 => new User(4, 'Evan Spiegel'),
-            5 => new User(5, 'Jack Dorsey'),
+            1 => new Usuario(1, 'Bill Gates'),
+            2 => new Usuario(2, 'Steve Jobs'),
+            3 => new Usuario(3, 'Mark Zuckerberg'),
+            4 => new Usuario(4, 'Evan Spiegel'),
+            5 => new Usuario(5, 'Jack Dorsey'),
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function findAll(): array
     {
-        return array_values($this->usuarios);
+        return array_values($this->arrUsuarios);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function findUsuarioById(int $id): User
+    public function findUsuarioById(int $id): Usuario
     {
-        if (!isset($this->usuarios[$id])) {
+        if (!isset($this->arrUsuarios[$id])) {
             throw new Exception("Usuario " . $id . " não encontrado");
         }
 
-        return $this->usuarios[$id];
+        return $this->arrUsuarios[$id];
     }
 }

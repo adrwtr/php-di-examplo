@@ -108,3 +108,16 @@ Ver commit - 87f8e8b - Usando uma classe de Action - MVC
 src\Domain\Model\Usuario.php
 src\Domain\Repository\IUsuarioRepository.php
 src\Domain\Repository\UsuarioRepository.php
+
+ver commit - 6f9fc17 - "Adicionado a camada de dominio
+
+----
+
+10 - Ligando a camada de dominio ao controller
+
+
+src\Domain\Model\Usuario.php
+src\Service\UsuarioService.php
+src\Action\Usuario\UsuarioListarAction.php
+
+ver commit - 
