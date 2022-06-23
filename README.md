@@ -100,7 +100,9 @@ php composer.phar dump-autoload
 Criar as classes 
 
 src/Action/Action.php
+
 src/Action/ActionPayload.php
+
 src/Action/Usuario/UsuarioListarAction.php
 
 alterar o index
@@ -112,8 +114,11 @@ Ver commit - 87f8e8b - Usando uma classe de Action - MVC
 9 - Criando a camada de dominio
 
 src\Domain\Model\Usuario.php
+
 src\Domain\Repository\IUsuarioRepository.php
+
 src\Domain\Repository\UsuarioRepository.php
+
 
 ver commit - 6f9fc17 - "Adicionado a camada de dominio
 
@@ -123,8 +128,11 @@ ver commit - 6f9fc17 - "Adicionado a camada de dominio
 
 
 src\Domain\Model\Usuario.php
+
 src\Service\UsuarioService.php
+
 src\Action\Usuario\UsuarioListarAction.php
+
 
 ver commit - 1a7bf9a - 1a7bf9a9ab3995ca54a039f1e438ddd3ec8f4ee6
 
@@ -133,6 +141,12 @@ ver commit - 1a7bf9a - 1a7bf9a9ab3995ca54a039f1e438ddd3ec8f4ee6
 11 - Implementando o DI
 
 public\di.php
+
 public\index.php
+
 src\Action\Usuario\UsuarioListarAction.php
+
 src\Service\UsuarioService.php
+
+
+ver commit - tag vEXEMPLO-1
