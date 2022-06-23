@@ -56,6 +56,7 @@ php -S localhost:8080 -t public public/index.php
 
 no index.php
 
+```php
 $app->get('/usuarios', function (Request $request, Response $response, $args) {
     $data = array(
         array(
@@ -78,6 +79,7 @@ $app->get('/usuarios', function (Request $request, Response $response, $args) {
             'application/json'
         );
 });
+```
 
 -----
 
@@ -85,11 +87,13 @@ $app->get('/usuarios', function (Request $request, Response $response, $args) {
 
 Adicionar no composer json
 
+```php
 "autoload": {
         "psr-4": {
             "App\\": "src/"
         }
     },
+```
 
 php composer.phar dump-autoload
 
