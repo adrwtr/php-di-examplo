@@ -11,24 +11,24 @@ use App\Domain\Repository\UsuarioRepository;
 class UsuarioListarAction extends Action
 {
     /**
-     * @var UsuarioRepository
+     * @var UsuarioService
      */
-    protected $objUsuarioRepository;
+    protected $objUsuarioService;
 
     public function __construct(
-        UsuarioRepository $objUsuarioRepository
+        UsuarioService $objUsuarioService
     ) {
-        $this->objUsuarioRepository = $objUsuarioRepository;
+        $this->objUsuarioService = $objUsuarioService;
     }
 
-    public function getUsuarioRepository() {
-        return $this->objUsuarioRepository;
+    public function getUsuarioService() {
+        return $this->objUsuarioService;
     }
     
     protected function action(): Response
     {
-        $objUsuarioService = new UsuarioService($this->getUsuarioRepository());
-        $arrUsuarios = $objUsuarioService->listarUsuarios();
+        // $objUsuarioService = new UsuarioService($this->getUsuarioService());
+        $arrUsuarios = $this->getUsuarioService()->listarUsuarios();
 
         return $this->respondWithData($arrUsuarios);
     }
