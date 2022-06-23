@@ -22,7 +22,7 @@ php -r "unlink('composer-setup.php');"
 
 php composer.phar require slim/slim:"4.*"
 php composer.phar require slim/psr7
-
+php composer.phar require php-di/php-di --with-all-dependencies
 
 6 - Criar o arquivo public/index.php
 
@@ -120,4 +120,13 @@ src\Domain\Model\Usuario.php
 src\Service\UsuarioService.php
 src\Action\Usuario\UsuarioListarAction.php
 
-ver commit - 
+ver commit - 1a7bf9a - 1a7bf9a9ab3995ca54a039f1e438ddd3ec8f4ee6
+
+----- 
+
+11 - Implementando o DI
+
+public\di.php
+public\index.php
+src\Action\Usuario\UsuarioListarAction.php
+src\Service\UsuarioService.php

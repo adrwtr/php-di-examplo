@@ -10,6 +10,18 @@ use App\Action\Usuario\UsuarioListarAction;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+// Instantiate PHP-DI ContainerBuilder
+$containerBuilder = new ContainerBuilder();
+
+// Set up DI
+$fndi = require __DIR__ . '/di.php';
+$fndi($containerBuilder);
+
+// Build PHP-DI Container instance
+$container = $containerBuilder->build();
+
+// Instantiate the app
+AppFactory::setContainer($container);
 $app = AppFactory::create();
 
 $app->addRoutingMiddleware();
