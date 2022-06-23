@@ -26,6 +26,7 @@ php composer.phar require php-di/php-di --with-all-dependencies
 
 6 - Criar o arquivo public/index.php
 
+```php
 <?php
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -41,14 +42,15 @@ $app->get('/', function (Request $request, Response $response, $args) {
 });
 
 $app->run();
-
+```
 
 testando a aplicação base
 
 php -S localhost:8080 -t public public/index.php
 
 
-----
+
+-----
 
 7 - Criando uma rota que retorna um json
 
@@ -101,7 +103,7 @@ alterar o index
 
 Ver commit - 87f8e8b - Usando uma classe de Action - MVC
 
-----
+-----
 
 9 - Criando a camada de dominio
 
@@ -111,7 +113,7 @@ src\Domain\Repository\UsuarioRepository.php
 
 ver commit - 6f9fc17 - "Adicionado a camada de dominio
 
-----
+-----
 
 10 - Ligando a camada de dominio ao controller
 
@@ -122,7 +124,7 @@ src\Action\Usuario\UsuarioListarAction.php
 
 ver commit - 1a7bf9a - 1a7bf9a9ab3995ca54a039f1e438ddd3ec8f4ee6
 
------ 
+-----
 
 11 - Implementando o DI
 
