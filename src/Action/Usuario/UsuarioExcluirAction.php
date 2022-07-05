@@ -12,11 +12,12 @@ class UsuarioExcluirAction extends UsuarioAction
 {
     protected function action(): Response
     {
-        $objJsonBody = $this->getFormData();
-     
-        $arrUsuarios = $this->getUsuarioService()->inserir(
-            $objJsonBody
-        );
+        $id = (int) $this->resolveArg('id');
+
+        $arrUsuarios = $this->getUsuarioService()
+            ->excluirUsuario(
+                $id
+            );
 
         return $this->respondWithData($arrUsuarios);
     }

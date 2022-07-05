@@ -35,7 +35,7 @@ class UsuarioService
             ->jsonSerialize();
     }
 
-    public function inserirUsuario($objJsonBody) 
+    public function inserirUsuario($objJsonBody)
     {
         $objUsuario = null;
 
@@ -52,7 +52,7 @@ class UsuarioService
         return $objUsuario;
     }
 
-    public function alterarUsuario($id, $objJsonBody) 
+    public function alterarUsuario($id, $objJsonBody)
     {
         if (isset($objJsonBody->ds_nome)) {
             $arrDados = ["ds_nome" => $objJsonBody->ds_nome];
@@ -66,5 +66,16 @@ class UsuarioService
         // var_dump($this->listarUsuarios());
 
         return $sn_alterado;
+    }
+
+    public function excluirUsuario($id)
+    {
+        $sn_excluido = $this->getUsuarioRepository()->delete(
+            $id
+        );
+
+        // var_dump($this->listarUsuarios());
+
+        return $sn_excluido;
     }
 }
