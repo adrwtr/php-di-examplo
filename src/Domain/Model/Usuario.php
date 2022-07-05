@@ -5,15 +5,29 @@ namespace App\Domain\Model;
 
 use JsonSerializable;
 
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\Table;
+
+/**
+ * @Entity
+ * @Table(name="users")
+ */
 class Usuario implements JsonSerializable
 {
     /**
      * @var int|null
+     * @Id
+     * @Column(type="integer")
+     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     * @Column(type="string", unique=false, nullable=false)
      */
     private $ds_nome;
 
