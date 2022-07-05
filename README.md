@@ -162,6 +162,15 @@ ver commit - tag vEXEMPLO-1
 
 12 - Alterando para memory e criand outras ações
 
+commit 4f9f01dce9ba05a6fdaf17fc2575c96f82762372
+
+public/di.php
+src/Domain/Repository/IUsuarioRepository.php
+src/Domain/Repository/UsuarioMemoryRepository.php
+src/Domain/Repository/UsuarioRepository.php
+
+Ações
+
 http://localhost:8080/usuarios/listar
 http://localhost:8080/usuarios/procurar/1
 http://localhost:8080/usuarios/incluir
@@ -174,3 +183,8 @@ Commits:
  4a7fa114f3bda24b0bb16909be07581d6b1700ce
  b7269871d44e30ebe06b1812c2f578d3814b9a12
  8940685501b5a28b6e4b8693bc40b329cd47974c
+
+
+------
+
+13 - Adicionando Banco REAL - SQLITE
