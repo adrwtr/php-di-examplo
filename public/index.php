@@ -8,6 +8,7 @@ use Slim\Factory\ServerRequestCreatorFactory;
 
 use App\Action\Usuario\UsuarioListarAction;
 use App\Action\Usuario\UsuarioProcurarAction;
+use App\Action\Usuario\UsuarioIncluirAction;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -36,7 +37,7 @@ $app->get('/', function (Request $request, Response $response, $args) {
 $app->group('/usuarios', function (Group $group) {
     $group->get('/procurar/{id}', UsuarioProcurarAction::class);
     $group->get('/listar', UsuarioListarAction::class);
-    // $group->get('incluir', UsuarioIncluirAction::class);
+    $group->post('/incluir', UsuarioIncluirAction::class);
     // $group->get('/alterar/{id}', UsuarioAlterarAction::class);
     // $group->get('/excluir/{id}', UsuarioExcluirAction::class);
 });

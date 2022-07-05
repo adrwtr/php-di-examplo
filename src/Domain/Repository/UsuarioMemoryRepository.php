@@ -44,13 +44,13 @@ class UsuarioMemoryRepository implements IUsuarioRepository
 
     public function insert(array $arrValores): Usuario
     {
-        if (!isset(arrValores['ds_nome'])) {
+        if (!isset($arrValores['ds_nome'])) {
             throw new \Exception('Campo ds_nome não informado');
         }
 
         $objNovo = new Usuario(
             count($this->arrUsuarios) + 1,
-            arrValores['ds_nome']
+            $arrValores['ds_nome']
         );
 
         $this->arrUsuarios[] = $objNovo;
