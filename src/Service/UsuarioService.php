@@ -5,16 +5,17 @@ namespace App\Service;
 
 
 use App\Domain\Repository\UsuarioMemoryRepository;
+use App\Domain\Repository\IUsuarioRepository;
 
 class UsuarioService
 {
     /**
-     * @var UsuarioMemoryRepository
+     * @var IUsuarioRepository
      */
     protected $objUsuarioRepository;
 
     public function __construct(
-        UsuarioMemoryRepository $objUsuarioRepository
+        IUsuarioRepository $objUsuarioRepository
     ) {
         $this->objUsuarioRepository = $objUsuarioRepository;
     }
