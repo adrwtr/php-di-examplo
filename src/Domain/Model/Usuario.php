@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping\Table;
 
 /**
  * @Entity
- * @Table(name="users")
+ * @Table(name="usuario")
  */
 class Usuario implements JsonSerializable
 {

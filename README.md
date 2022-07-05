@@ -191,9 +191,11 @@ Commits:
 
 php ..\vendor\bin\doctrine
 php ..\vendor\bin\doctrine orm:info
-
+php ..\vendor\bin\doctrine  orm:schema-tool:create
 
 commit  b3e38408efc88cb4635fb0161d84dfd5200c6c9c
+commit  c2bbf838136ad8c0eb41c7b87729f9120d6940d8
+
 
 
 
