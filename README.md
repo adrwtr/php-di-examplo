@@ -167,3 +167,10 @@ http://localhost:8080/usuarios/procurar/1
 http://localhost:8080/usuarios/incluir
 http://localhost:8080/usuarios/alterar/1
 http://localhost:8080/usuarios/excluir/1
+
+Commits:
+
+ b4f07740478fb3ba32fe78a4ecfc63bfb959594a
+ 4a7fa114f3bda24b0bb16909be07581d6b1700ce
+ b7269871d44e30ebe06b1812c2f578d3814b9a12
+ 8940685501b5a28b6e4b8693bc40b329cd47974c
