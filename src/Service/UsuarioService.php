@@ -27,4 +27,11 @@ class UsuarioService
     {
         return $this->getUsuarioRepository()->findAll();
     }
+
+    public function procurarUsuario($id): array
+    {
+        return $this->getUsuarioRepository()
+            ->findUsuarioById($id)
+            ->jsonSerialize();
+    }
 }

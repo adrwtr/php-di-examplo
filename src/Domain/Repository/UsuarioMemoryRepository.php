@@ -36,7 +36,7 @@ class UsuarioMemoryRepository implements IUsuarioRepository
     public function findUsuarioById(int $id): Usuario
     {
         if (!isset($this->arrUsuarios[$id])) {
-            throw new Exception("Usuario " . $id . " não encontrado");
+            throw new \Exception("Usuario " . $id . " não encontrado");
         }
 
         return $this->arrUsuarios[$id];
@@ -45,7 +45,7 @@ class UsuarioMemoryRepository implements IUsuarioRepository
     public function insert(array $arrValores): Usuario
     {
         if (!isset(arrValores['ds_nome'])) {
-            throw Exception('Campo ds_nome não informado');
+            throw new \Exception('Campo ds_nome não informado');
         }
 
         $objNovo = new Usuario(
