@@ -161,3 +161,9 @@ ver commit - tag vEXEMPLO-1
 -----
 
 12 - Alterando para memory e criand outras ações
+
+http://localhost:8080/usuarios/listar
+http://localhost:8080/usuarios/procurar/1
+http://localhost:8080/usuarios/incluir
+http://localhost:8080/usuarios/alterar/1
+http://localhost:8080/usuarios/excluir/1

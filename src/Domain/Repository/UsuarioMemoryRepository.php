@@ -60,7 +60,7 @@ class UsuarioMemoryRepository implements IUsuarioRepository
 
     public function update(int $id, array $arrValores): bool
     {
-        if (!isset(arrValores['ds_nome'])) {
+        if (!isset($arrValores['ds_nome'])) {
             throw Exception('Campo ds_nome não informado');
         }
 
@@ -72,7 +72,7 @@ class UsuarioMemoryRepository implements IUsuarioRepository
         }
 
         $objNovo = $this->arrUsuarios[$id];
-        $objNovo->ds_nome = $arrValores['ds_nome'];
+        $objNovo->setDsNome($arrValores['ds_nome']);
 
         return true;
     }

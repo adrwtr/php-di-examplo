@@ -8,13 +8,15 @@ use App\Action\Action;
 use App\Service\UsuarioService;
 use App\Domain\Repository\UsuarioRepository;
 
-class UsuarioIncluirAction extends UsuarioAction
+class UsuarioAlterarAction extends UsuarioAction
 {
     protected function action(): Response
     {
+        $id = (int) $this->resolveArg('id');
         $objJsonBody = $this->getFormData();
      
-        $arrUsuarios = $this->getUsuarioService()->inserirUsuario(
+        $arrUsuarios = $this->getUsuarioService()->alterarUsuario(
+            $id,
             $objJsonBody
         );
 

@@ -44,6 +44,15 @@ class Usuario implements JsonSerializable
     }
 
     /**
+     * @return string
+     */
+    public function setDsNome($ds_valor): string
+    {
+        $this->ds_nome = $ds_valor;
+        return $this->ds_nome;
+    }
+
+    /**
      * @return array
      */
     public function jsonSerialize()
