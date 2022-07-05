@@ -4,17 +4,17 @@ declare(strict_types=1);
 namespace App\Service;
 
 
-use App\Domain\Repository\UsuarioRepository;
+use App\Domain\Repository\UsuarioMemoryRepository;
 
 class UsuarioService
 {
     /**
-     * @var UsuarioRepository
+     * @var UsuarioMemoryRepository
      */
     protected $objUsuarioRepository;
 
     public function __construct(
-        UsuarioRepository $objUsuarioRepository
+        UsuarioMemoryRepository $objUsuarioRepository
     ) {
         $this->objUsuarioRepository = $objUsuarioRepository;
     }

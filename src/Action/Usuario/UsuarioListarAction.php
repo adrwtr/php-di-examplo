@@ -8,23 +8,8 @@ use App\Action\Action;
 use App\Service\UsuarioService;
 use App\Domain\Repository\UsuarioRepository;
 
-class UsuarioListarAction extends Action
+class UsuarioListarAction extends UsuarioAction
 {
-    /**
-     * @var UsuarioService
-     */
-    protected $objUsuarioService;
-
-    public function __construct(
-        UsuarioService $objUsuarioService
-    ) {
-        $this->objUsuarioService = $objUsuarioService;
-    }
-
-    public function getUsuarioService() {
-        return $this->objUsuarioService;
-    }
-    
     protected function action(): Response
     {
         // $objUsuarioService = new UsuarioService($this->getUsuarioService());
