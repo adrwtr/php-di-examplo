@@ -20,7 +20,10 @@ return [
             // List of paths where Doctrine will search for metadata.
             // Metadata can be either YML/XML files or PHP classes annotated
             // with comments or PHP8 attributes.
-            'metadata_dirs' => [APP_ROOT . '\..\src\Domain\Model'],
+            // windows 'metadata_dirs' => [APP_ROOT . '\..\src\Domain\Model'],
+
+            // unix
+            'metadata_dirs' => [APP_ROOT . '/../src/Domain/Model'],
 
             // The parameters Doctrine needs to connect to your database.
             // These parameters depend on the driver (for instance the 'pdo_sqlite' driver

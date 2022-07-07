@@ -20,6 +20,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
 COPY . /usr/src/myapp
 WORKDIR /usr/src/myapp
 
-EXPOSE 8081
+EXPOSE 8080
 
-CMD [ "php", "-S", "0.0.0.0:8081", "-t", "public", "public/index.php" ]
+CMD [ "php", "-S", "0.0.0.0:8080", "-t", "public", "public/index.php" ]
