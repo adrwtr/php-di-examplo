@@ -18,8 +18,11 @@ require __DIR__ . '/../vendor/autoload.php';
 $containerBuilder = new ContainerBuilder();
 
 // Set up DI
-$fndi = require __DIR__ . '/di.php';
+$fndi = require __DIR__ . '/../src/Config/di.php';
 $fndi($containerBuilder);
+
+$doctrine = require_once __DIR__ . '/../src/Config/doctrine-bootstrap.php';
+$doctrine($containerBuilder);
 
 // Build PHP-DI Container instance
 $container = $containerBuilder->build();

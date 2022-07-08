@@ -12,9 +12,6 @@ use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use DI\ContainerBuilder;
 
-// require_once __DIR__ . '/../vendor/autoload.php';
-
-
 return function (ContainerBuilder $containerBuilder) {
     $settings = require __DIR__ . '/settings.php';
     $settings = $settings["settings"];

@@ -212,3 +212,8 @@ commit  b3e38408efc88cb4635fb0161d84dfd5200c6c9c
 commit  c2bbf838136ad8c0eb41c7b87729f9120d6940d8
 
 ------
+
+
+------
+
+14 - Programando o repositorio usando o banco
