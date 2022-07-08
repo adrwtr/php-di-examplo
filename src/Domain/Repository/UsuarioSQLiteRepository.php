@@ -26,6 +26,11 @@ class UsuarioSQLiteRepository implements IUsuarioRepository
         return $this->objRepository;
     }
 
+    public function getEntityManager()
+    {
+        return $this->em;
+    }
+
     public function findAll(): array
     {
         return $this->getRepository()
@@ -34,7 +39,7 @@ class UsuarioSQLiteRepository implements IUsuarioRepository
 
     public function findUsuarioById(int $id): Usuario
     {
-        $arrUsuario = $this->em->find(
+        $arrUsuario = $this->getEntityManager()->find(
             \App\Domain\Model\Usuario::class,
             $id
         );
@@ -53,11 +58,15 @@ class UsuarioSQLiteRepository implements IUsuarioRepository
         }
 
         $objNovo = new Usuario(
-            count($this->arrUsuarios) + 1,
+            null,
             $arrValores['ds_nome']
         );
 
-        $this->arrUsuarios[] = $objNovo;
+        $this->getEntityManager()
+            ->persist($objNovo);
+
+        $this->getEntityManager()
+            ->flush();
 
         return $objNovo;
     }
@@ -68,15 +77,15 @@ class UsuarioSQLiteRepository implements IUsuarioRepository
             throw Exception('Campo ds_nome não informado');
         }
 
-        if (!isset($this->arrUsuarios[$id])) {
-            throw Exception(
-                'Id informado não existe. ID: '
-                . $id
-            );
-        }
+        $objUsuario = $this->findUsuarioById($id);
+        $objUsuario->setDsNome($arrValores['ds_nome']);
 
-        $objNovo = $this->arrUsuarios[$id];
-        $objNovo->setDsNome($arrValores['ds_nome']);
+        $this->getEntityManager()->
+            persist($objUsuario);
+
+        $this->getEntityManager()->
+            flush();
+
 
         return true;
     }

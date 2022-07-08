@@ -16,6 +16,7 @@ return function (ContainerBuilder $containerBuilder) {
 
         // memory
         // IUsuarioRepository::class => \DI\autowire(UsuarioMemoryRepository::class),
+
         // sqlite
         IUsuarioRepository::class => \DI\autowire(UsuarioSQLiteRepository::class),
 

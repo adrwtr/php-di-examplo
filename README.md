@@ -201,11 +201,10 @@ php ..\vendor\bin\doctrine  orm:schema-tool:create
 Unix
 
 ```sh
-cd public
-php ../vendor/bin/doctrine
-php ../vendor/bin/doctrine orm:info
-php ../vendor/bin/doctrine orm:schema-tool:create
-php ../vendor/bin/doctrine orm:clear-cache:metadata
+php vendor/bin/doctrine
+php vendor/bin/doctrine orm:info
+php vendor/bin/doctrine orm:schema-tool:create
+php vendor/bin/doctrine orm:clear-cache:metadata
 
 
 commit  b3e38408efc88cb4635fb0161d84dfd5200c6c9c
@@ -217,3 +216,11 @@ commit  c2bbf838136ad8c0eb41c7b87729f9120d6940d8
 ------
 
 14 - Programando o repositorio usando o banco
+
+commit 6cfe460111f25546fe4bdc73a7aa96ee7a65a3c5 - reprogramado os paths dos configs
+
+
+
+TODO - colocar o doctrine migration no projeto
+
+TODO - Aonde nesse projeto podemos usar o php stam
