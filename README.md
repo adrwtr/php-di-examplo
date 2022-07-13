@@ -224,3 +224,5 @@ commit 6cfe460111f25546fe4bdc73a7aa96ee7a65a3c5 - reprogramado os paths dos conf
 TODO - colocar o doctrine migration no projeto
 
 TODO - Aonde nesse projeto podemos usar o php stam
+
+TODO - adicionar php unit

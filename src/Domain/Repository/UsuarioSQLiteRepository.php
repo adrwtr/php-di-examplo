@@ -83,20 +83,21 @@ class UsuarioSQLiteRepository implements IUsuarioRepository
         $this->getEntityManager()->
             persist($objUsuario);
 
-        $this->getEntityManager()->
-            flush();
-
+        $this->getEntityManager()
+            ->flush();
 
         return true;
     }
 
     public function delete(int $id): bool
     {
-        if (!isset($this->arrUsuarios[$id])) {
-            return false;
-        }
+        $objUsuario = $this->findUsuarioById($id);
 
-        unset($this->arrUsuarios[$id]);
+        $this->getEntityManager()
+            ->remove($objUsuario);
+
+        $this->getEntityManager()
+            ->flush();
 
         return true;
     }
