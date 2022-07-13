@@ -219,7 +219,35 @@ commit  c2bbf838136ad8c0eb41c7b87729f9120d6940d8
 
 commit 6cfe460111f25546fe4bdc73a7aa96ee7a65a3c5 - reprogramado os paths dos configs
 
+commit 0505ca77e2f1100f561e5ce907f345dede057746 - todas as apis funcionando com a base sql lite
 
+
+-----
+
+15 - Adicionando php unit
+
+php composer.phar require phpunit/phpunit
+
+Obs: Tive que alterar no arquivo composer.json para conter o path para os testes
+
+```js
+"autoload-dev": {
+        "psr-4": {
+            "Test\\": "test/"
+        }
+    }
+```
+
+Executar o comando para atualizar os paths:
+
+```sh
+php composer.phar dump-autoload
+```
+
+php vendor/bin/phpunit --bootstrap ./tests/bootstrap.php ./test
+
+
+-----
 
 TODO - colocar o doctrine migration no projeto
 

@@ -15,10 +15,10 @@ return function (ContainerBuilder $containerBuilder) {
         // lista de repositories
 
         // memory
-        // IUsuarioRepository::class => \DI\autowire(UsuarioMemoryRepository::class),
+        IUsuarioRepository::class => \DI\autowire(UsuarioMemoryRepository::class),
 
         // sqlite
-        IUsuarioRepository::class => \DI\autowire(UsuarioSQLiteRepository::class),
+        // IUsuarioRepository::class => \DI\autowire(UsuarioSQLiteRepository::class),
 
         // lista de services
         UsuarioService::class => \DI\autowire(UsuarioService::class),
