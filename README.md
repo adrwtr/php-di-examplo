@@ -245,12 +245,3 @@ php composer.phar dump-autoload
 ```
 
 php vendor/bin/phpunit --bootstrap ./tests/bootstrap.php ./test
-
-
------
-
-TODO - colocar o doctrine migration no projeto
-
-TODO - Aonde nesse projeto podemos usar o php stam
-
-TODO - adicionar php unit

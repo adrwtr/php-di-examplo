@@ -12,6 +12,9 @@ class UsuarioSQLiteRepository implements IUsuarioRepository
     private EntityManager $em;
     private EntityRepository $objRepository;
 
+    // private $em;
+    // private $objRepository;
+
     public function __construct(EntityManager $em)
     {
         $this->em = $em;

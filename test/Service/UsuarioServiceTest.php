@@ -66,5 +66,41 @@ class UsuarioServiceTest extends TestCase
         );
     }
 
+    public function testAlterarUsuario()
+    {
+        $objUsuarioService = $this->getContainer()
+            ->get(\App\Service\UsuarioService::class);
+
+        $objUsuarioService->alterarUsuario(
+            1,
+            (object)(["ds_nome" => "teste"])
+        );
+
+        $arrUsuarios = $objUsuarioService->listarUsuarios();
+
+        $this->assertEquals(
+            $arrUsuarios[0]->getDsNome(),
+            "teste"
+        );
+    }
+
+    public function testExcluirUsuario()
+    {
+        $objUsuarioService = $this->getContainer()
+            ->get(\App\Service\UsuarioService::class);
+
+        $this->assertEquals(
+            5,
+            count($objUsuarioService->listarUsuarios())
+        );
+
+        $objUsuarioService->excluirUsuario(1);
+
+        $this->assertEquals(
+            4,
+            count($objUsuarioService->listarUsuarios())
+        );
+    }
+
 
 }

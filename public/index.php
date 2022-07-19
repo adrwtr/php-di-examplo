@@ -19,7 +19,7 @@ $containerBuilder = new ContainerBuilder();
 
 // Set up DI
 $fndi = require __DIR__ . '/../src/Config/di.php';
-$fndi($containerBuilder);
+$fndi($containerBuilder, false);
 
 $doctrine = require_once __DIR__ . '/../src/Config/doctrine-bootstrap.php';
 $doctrine($containerBuilder);

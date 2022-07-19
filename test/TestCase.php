@@ -17,7 +17,7 @@ class TestCase extends PHPUnit_TestCase
 
         // Set up DI
         $fndi = require __DIR__ . '/../src/Config/di.php';
-        $fndi($containerBuilder);
+        $fndi($containerBuilder, true);
 
         // $doctrine = require_once __DIR__ . '/../src/Config/doctrine-bootstrap.php';
         // $doctrine($containerBuilder);
