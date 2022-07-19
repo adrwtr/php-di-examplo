@@ -32,3 +32,4 @@ composer.phar
 .phpunit.result.cache
 
 banco.sqlite
+composer.lock
